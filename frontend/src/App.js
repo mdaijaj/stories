@@ -13,7 +13,7 @@ import VideoStory from './components/video_story';
 import ImageStory from './components/image_story';
 import TextStory from './components/text_story';
 import Errorpage from './components/error';
-
+import ViewStory from './components/view_story';
 
 const Routing =()=>{
 
@@ -24,6 +24,7 @@ const Routing =()=>{
         <Route path="/video_story" element={<VideoStory/>} />
         <Route path="/image_story" element={<ImageStory/>} />
         <Route path="/text_story" element={<TextStory/>} />
+        <Route path="/view_story" element={<ViewStory/>} />
       </Routes>
     </>
   )

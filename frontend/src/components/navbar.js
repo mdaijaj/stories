@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import {NavLink} from 'react-router-dom';
 import "../App.css"  //22
+import Logo from '../storylogos.png'
 import react from "react";
 const Navbar = () => {
     return (
@@ -11,7 +12,7 @@ const Navbar = () => {
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <NavLink className="navbar-brand" to="/"> <img src="https://pxrnf35mt7b3csry7811do6t-wpengine.netdna-ssl.com/wp-content/uploads/2020/02/Stories_Logo_Square.png" width="100px"></img></NavLink>
+                <NavLink className="navbar-brand" to="/"> <img src={Logo} width="100px"></img></NavLink>
                 <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li className="nav-item active">
                         <NavLink className="nav-link" to="/">Home <span className="sr-only">(current)</span></NavLink>
@@ -24,6 +25,9 @@ const Navbar = () => {
                     </li>
                     <li className="nav-item">
                         <NavLink className="nav-link" to="/text_story">Text Stories</NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/view_story">View Stories</NavLink>
                     </li>
                 </ul>
                 <form className="form-inline my-2 my-lg-0">
