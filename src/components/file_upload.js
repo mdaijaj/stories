@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React,{Component} from 'react';
- 
+import react from "react";
+
 class FileUpload extends Component {
   
     state = {

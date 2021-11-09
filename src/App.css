@@ -46,3 +46,11 @@
 .bady{
   background-color: #282c34;
 }
+
+.card-group{
+  padding: 10px;
+}
+
+.card-group card{
+  margin: 10px;
+}

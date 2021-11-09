@@ -1,22 +1,46 @@
 import './App.css';
-import Navbar from './components/navbar';
-import TextStory from './components/text_story';
-import ImageVideoStory from './components/image_video_story';
-import FileUpload from './components/file_upload';
+import {
+  Routes,
+  Switch,
+  Route,
+  useLocation
+} from "react-router-dom";
 
-const App=()=> {
+import Navbar from './components/navbar';
+import TextModel from './components/text_model';
+import FileModel from './components/file_upload';
+import VideoStory from './components/video_story';
+import ImageStory from './components/image_story';
+import TextStory from './components/text_story';
+import Errorpage from './components/error';
+
+
+const Routing =()=>{
+
   return (
     <>
-      <Navbar/>
-        <div className="main">
-          <TextStory/> <br/><br/>
-          <FileUpload/>
-        </div>
-     
-  
-      {/* <div><img src="https://static-cse.canva.com/blob/562124/RightBackground4.jpg" width="100%"/></div> */}
-</>
-  );
+      <Routes>
+        <Route path="/" element={<TextModel/>} />  {/* add FileModel */}
+        <Route path="/video_story" element={<VideoStory/>} />
+        <Route path="/image_story" element={<ImageStory/>} />
+        <Route path="/text_story" element={<TextStory/>} />
+      </Routes>
+    </>
+  )
+}
+
+const App=()=>{
+    return (
+      <>
+      <div className='main'>
+        <Navbar/>
+        <Routing />
+        {/* <TextModel/><br/> <br/> */}
+        {/* <FileModel/> */}
+      </div>
+      </>
+    )
 }
 
 export default App;
+

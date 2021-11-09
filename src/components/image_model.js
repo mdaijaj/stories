@@ -1,6 +1,6 @@
 import axios from 'axios'
-
-const ImageVideoStory=()=>{
+import react from "react";
+const ImageModel=()=>{
 
     const fileChangedHandler = (event) => {
         const file = event.target.files[0]
@@ -38,4 +38,4 @@ const ImageVideoStory=()=>{
     )
 }
 
-export default ImageVideoStory;
+export default ImageModel;
