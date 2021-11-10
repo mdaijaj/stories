@@ -25,6 +25,7 @@ const TextStory=()=>{
                 <p>hello bro</p>
                 </div>
             </div>
+            {/* https://bornrealist.com/folder/image */}
             
             <div class="column">
                 <div class="card">

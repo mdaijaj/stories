@@ -1,7 +1,6 @@
 import react from "react";
 
 const VideoStory=()=> {
-  const addData= 50+20;
 
   return (
     <>
