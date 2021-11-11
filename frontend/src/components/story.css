@@ -29,13 +29,18 @@
       width: 100%;
       display: block;
       margin-bottom: 20px;
+      list-style: none;
     }
   }
   
   /* Style the counter cards */
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 16px;
+    padding: 20px;
     text-align: center;
     background-color: #f1f1f1;
+  }
+
+  .columns{
+    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/001/984/880/small/abstract-colorful-geometric-overlapping-background-and-texture-free-vector.jpg");
   }

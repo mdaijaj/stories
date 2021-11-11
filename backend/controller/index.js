@@ -2,6 +2,8 @@
 const path=require('path')
 const textStory= require('../models/text_schema')
 const ImageVideoStory= require('../models/videoImage_schema')
+var http = require('http');
+var url = require('url') ;
 
 //add story
 const addTextStory= async(req,res)=>{
@@ -33,19 +35,31 @@ const fileForm= (req,res)=>{
 
 //single image and video uploding 
 const uploadStory= async(req,res)=>{
-    const imageVideo_url=JSON.stringify(req.file.filename) 
+    console.log("req.file", req.file)
+    //const imageVideo_url=JSON.stringify(req.file.filename) 
+    var hostname = req.headers.host; // hostname = 'localhost:8080'
+    const types= req.file.mimetype;
+    console.log("type", types)
+    // var path="/uploads";
+    // var pathname = url.parse(req.url).path; 
+    var imageVideo_url = 'http://'+hostname+'/'+req.file.path;   // pathname = '/MyApp'
     console.log(imageVideo_url)
     const {name}=req.body;
-    var response = '<a href="/">Home</a><br>'
-    response += "Files uploaded successfully.<br>"
-    response += `<img src="${req.file.path}" /><br>`
-    const addTextData= new ImageVideoStory({name, imageVideo_url})
+    // response += `<img src="${req.file.path}" /><br>`
+    const addTextData= new ImageVideoStory({name,imageVideo_url, types})
     await addTextData.save();
     return res.send({
         message: "File uploaded sucessfully!.", 
-        response:response, 
-        name:name
+        name: name,
+        typesaa: types
     });
+}
+
+//show all story
+const storyList= async(req,res)=>{
+    const allStory= await ImageVideoStory.find()
+    console.log("allStory", allStory)
+    return res.status(200).send({message: "show all data sucess", data: allStory})
 }
 
 
@@ -53,5 +67,6 @@ module.exports={
     addTextStory,
     availableTextStory,
     fileForm,
-    uploadStory
+    uploadStory,
+    storyList
 }

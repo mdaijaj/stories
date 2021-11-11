@@ -13,6 +13,10 @@ let videoImageStory_schema=  new Schema({
     },
     time: {
         type: Date
+    },
+    types: {
+        type: String,
+        required: true,
     }
 }, {
     timestamps: true
