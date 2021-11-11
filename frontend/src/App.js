@@ -36,8 +36,6 @@ const App=()=>{
       <div className='main'>
         <Navbar/>
         <Routing />
-        {/* <TextModel/><br/> <br/> */}
-        {/* <FileModel/> */}
       </div>
       </>
     )

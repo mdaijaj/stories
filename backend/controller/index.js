@@ -38,20 +38,20 @@ const uploadStory= async(req,res)=>{
     console.log("req.file", req.file)
     //const imageVideo_url=JSON.stringify(req.file.filename) 
     var hostname = req.headers.host; // hostname = 'localhost:8080'
+    const types= req.file.mimetype;
+    console.log("type", types)
     // var path="/uploads";
     // var pathname = url.parse(req.url).path; 
     var imageVideo_url = 'http://'+hostname+'/'+req.file.path;   // pathname = '/MyApp'
     console.log(imageVideo_url)
     const {name}=req.body;
-    var response = '<a href="/">Home</a><br>'
-    response += "Files uploaded successfully.<br>"
-    response += `<img src="${req.file.path}" /><br>`
-    const addTextData= new ImageVideoStory({name,imageVideo_url  })
+    // response += `<img src="${req.file.path}" /><br>`
+    const addTextData= new ImageVideoStory({name,imageVideo_url, types})
     await addTextData.save();
     return res.send({
         message: "File uploaded sucessfully!.", 
-        response:response, 
-        name:name
+        name: name,
+        typesaa: types
     });
 }
 
