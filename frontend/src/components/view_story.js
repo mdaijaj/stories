@@ -22,14 +22,14 @@ const ViewStory=()=> {
               </div>
             </div>
             <div class="carousel-item">
-            <img src="https://bornrealist.com/wp-content/uploads/2017/05/warran-buffet.jpg" alt="..."/>
+            <img src="https://bornrealist.com/wp-content/uploads/2017/05/warran-buffet.jpg" width="800px" height="600px" alt="..."/>
               <div class="carousel-caption d-none d-md-block">
                 <h5>Second slide label</h5>
                 <p>Some representative placeholder content for the second slide.</p>
               </div>
             </div>
             <div class="carousel-item">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoKszlfp4Mg9MpvMD1CFyPt7XE42UDFfcSuA&usqp=CAU" alt="..."/>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoKszlfp4Mg9MpvMD1CFyPt7XE42UDFfcSuA&usqp=CAU" width="800px" height="600px" alt="..."/>
               <div class="carousel-caption d-none d-md-block">
                 <h5>Third slide label</h5>
                 <p>Some representative placeholder content for the third slide.</p>
