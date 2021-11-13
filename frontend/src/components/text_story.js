@@ -1,23 +1,39 @@
 import react from "react";
 import '../App.css';
 import './story.css'
+import React, { useState, useEffect } from 'react';
 
 const TextStory=()=>{
+    const [storyList, setStoryList]= useState([]);
+
+    useEffect(() => {
+        const getStory=async()=>{
+            const response= await fetch('/api/availableTextStory')
+            const postData= await response.json();
+            const data=postData.data
+            setStoryList([...data])
+        }
+        getStory()
+    }, []);
+    console.log("storyList", storyList)
     return (
         <>
-        <div className="TextStoryPage">
-            <p>what are you doing king khan</p>
-        </div>
-        
-        <div class="row">
-            <div class="columns">
-                <div class="cards">
-                <img src="https://suej1u323x-flywheel.netdna-ssl.com/wp-content/uploads/2020/03/Quote-2.jpg" class="card-img-top" alt="..." height="300px"/>
-                <h5>king khan</h5>
-                <p>hello bro</p>
-                </div>
-            </div>
-        </div>
+            <ul>
+                {storyList.map((data)=>{
+                    return(
+                        <li className="column">
+                        <div className="TextStoryPages">
+                            <div className="card">
+                                <h5>{data.name}</h5>
+                                <h5>{data.title}</h5>
+                                <p>{data.note}</p>
+                                <p>{data.createdAt}</p>
+                            </div>
+                            </div>
+                        </li>
+                    )
+                })}
+            </ul>
         </>
     )
 }

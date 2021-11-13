@@ -48,11 +48,11 @@ const uploadStory= async(req,res)=>{
     // response += `<img src="${req.file.path}" /><br>`
     const addTextData= new ImageVideoStory({name,imageVideo_url, types})
     await addTextData.save();
-    return res.send({
-        message: "File uploaded sucessfully!.", 
-        name: name,
-        typesaa: types
-    });
+    // return res.send({
+    //     message: "File uploaded sucessfully!.", 
+    //     name: name,
+    //     typesaa: types
+    // });
 }
 
 //show all story
