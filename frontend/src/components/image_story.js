@@ -16,7 +16,7 @@ const ImageStory=()=>{
         getStory()
     }, []);
 
-    const dataList=storyList.filter((item)=> item.types=="image/jpeg")
+    const dataList=storyList.filter((item)=> (item.types=="image/jpeg" || item.types=="image/png"))
     return(
         <>
         <h1>hello ImageStory</h1>

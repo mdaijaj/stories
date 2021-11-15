@@ -11,14 +11,10 @@ const TextModel=()=>{
 
     let name, value;
     const handleInputs=(e)=>{
-
         const newData={...story}
         newData[e.target.id]= e.target.value
         setStory(newData)
         console.log("newData", newData)
-        // name= e.target.name
-        // value= e.target.value
-        // setStory({...story, [name]: value})  // dynamic data for
     }
 
     const postStory= async(e)=>{
@@ -34,9 +30,6 @@ const TextModel=()=>{
         }
         const res=await fetch('/api/addTextStory', config)
         console.log("res", res)
-        // .then(res=>{
-        //     console.log("responseOk", res)
-        // })
         if(res.status===400 || !res){
             window.alert("Invalid Registration");
         }

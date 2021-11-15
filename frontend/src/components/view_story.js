@@ -1,40 +1,38 @@
 import react from "react";
 import './story.css'
+import React, { useState, useEffect } from 'react';
 
 const ViewStory=()=> {
+    const [storyList, setStoryList]= useState([]);
+
+    const getStory=async()=>{
+      const response= await fetch('/api/storyList')
+      const postData= await response.json();
+      const data=postData.data
+      setStoryList([...data])
+  }
+  console.log("storyList", storyList)
+  useEffect(() => {
+      getStory()
+  }, []);
 
   return (
     <>
         <h2> hello ViewStory</h2>
-
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="2000">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-          </ol>
+
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="https://static.toiimg.com/thumb/msid-80197220,width-800,height-600,resizemode-75,imgsize-101497,pt-32,y_pad-40/80197220.jpg" alt="..."/>
-              <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Some representative placeholder content for the first slide.</p>
-              </div>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk-RKX8-kWiwTVInESD0cd2Y7v8LKjVi-YLg&usqp=CAU"  width="800px" height="550px" alt="..." />
             </div>
-            <div class="carousel-item">
-            <img src="https://bornrealist.com/wp-content/uploads/2017/05/warran-buffet.jpg" width="800px" height="600px" alt="..."/>
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>Some representative placeholder content for the second slide.</p>
+          {storyList.map((data)=>{
+            return(
+              <div class="carousel-item">
+                <img src={data.imageVideo_url} alt="..." width="800px" height="550px"/>
               </div>
-            </div>
-            <div class="carousel-item">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoKszlfp4Mg9MpvMD1CFyPt7XE42UDFfcSuA&usqp=CAU" width="800px" height="600px" alt="..."/>
-              <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>Some representative placeholder content for the third slide.</p>
-              </div>
-            </div>
+            )
+            })}
+
           </div>
           <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -50,3 +48,4 @@ const ViewStory=()=> {
 }
 
 export default ViewStory;
+

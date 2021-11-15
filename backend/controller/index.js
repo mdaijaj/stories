@@ -36,24 +36,22 @@ const fileForm= (req,res)=>{
 //single image and video uploding 
 const uploadStory= async(req,res)=>{
     console.log("req.file", req.file)
-    //const imageVideo_url=JSON.stringify(req.file.filename) 
     var hostname = req.headers.host; // hostname = 'localhost:8080'
     const types= req.file.mimetype;
     console.log("type", types)
-    // var path="/uploads";
-    // var pathname = url.parse(req.url).path; 
     var imageVideo_url = 'http://'+hostname+'/'+req.file.path;   // pathname = '/MyApp'
-    console.log(imageVideo_url)
     const {name}=req.body;
     // response += `<img src="${req.file.path}" /><br>`
     const addTextData= new ImageVideoStory({name,imageVideo_url, types})
     await addTextData.save();
-    // return res.send({
-    //     message: "File uploaded sucessfully!.", 
-    //     name: name,
-    //     typesaa: types
-    // });
+    return res.send({
+        message: "File uploaded sucessfully!.", 
+        name: name,
+        typesaa: types
+    });
 }
+
+
 
 //show all story
 const storyList= async(req,res)=>{

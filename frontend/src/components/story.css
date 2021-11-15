@@ -46,3 +46,22 @@
   .card h5{
     color: tomato;
   }
+  .rows { 
+    display: inline;
+  } 
+  .columns { 
+    flex: 33.33%; 
+    padding: 5px; 
+  }
+
+
+
+
+
+
+
+
+
+
+
+

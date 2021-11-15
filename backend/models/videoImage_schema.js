@@ -5,7 +5,7 @@ let videoImageStory_schema=  new Schema({
     
     name: {
         type: String,
-        required: true,
+        // required: true,
     },
     imageVideo_url: {
         type: String,
@@ -16,7 +16,7 @@ let videoImageStory_schema=  new Schema({
     },
     types: {
         type: String,
-        required: true,
+        // required: true,
     }
 }, {
     timestamps: true
