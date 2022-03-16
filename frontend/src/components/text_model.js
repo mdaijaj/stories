@@ -56,7 +56,7 @@ const TextModel=()=>{
                 <div className="modal-body">
                     <form method="Post"> 
                         <div className="form-group">
-                            <label for="name" className="col-form-label">username:</label>
+                            <label for="name" className="col-form-label">username:</label><br/>
                             <input type="text" onChange={(e)=>handleInputs(e)} className="form-control" id="name"/>
                         </div>
                         <div className="form-group">

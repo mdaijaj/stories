@@ -42,11 +42,17 @@ class ReactUploadImage extends React.Component {
         return (
             <form onSubmit={this.onFormSubmit}>
                 <h1>File Upload</h1>
-                <label> Username:
-                    <input type="text" name="fname" value={this.state.value} onChange={this.handleChange} />        
-                </label>
-                <input type="file" name="myImage" onChange= {this.onChange} />
-                <button type="submit">Upload</button>
+                <div className=''>
+                    <label> Username:
+                        <input type="text" name="fname" value={this.state.value} onChange={this.handleChange} />        
+                    </label>
+                </div><br/>
+                <div>
+                    <input type="file" name="myImage" onChange= {this.onChange} />
+                    <button type="submit">Upload</button>
+                </div>
+                
+               
             </form>
         )
     }

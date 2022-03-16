@@ -17,13 +17,13 @@ const ViewStory=()=> {
   return (
     <>
         <h2> hello ViewStory</h2>
-
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="2000">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
             <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
           </ol>
+          
           {storyList.map((data)=>{
             <>
             <h3>{data}</h3>

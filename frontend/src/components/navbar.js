@@ -4,6 +4,7 @@ import {NavLink} from 'react-router-dom';
 import "../App.css"  //22
 import Logo from '../storylogos.png'
 import react from "react";
+
 const Navbar = () => {
     return (
         <>
@@ -39,8 +40,5 @@ const Navbar = () => {
         </>
     )
 }
-
-
-
 
 export default Navbar;
