@@ -1,0 +1,4 @@
+jsx:-
+return(
+    <h1>Hello, {formatName(user)}!</h1>;  //jsx
+)
